@@ -1,0 +1,18 @@
+targets:
+  $default:
+    # build_runner
+    sources:
+      # Note that it is important to include these in the default target.
+      - pubspec.*
+      - $package$
+      - lib/$lib$
+      - lib/**
+      # additional sources
+      - test/**
+#      - graphql/**
+
+    builders:
+      freezed:
+        options:
+          union_key: __typename
+          union_value_case: pascal

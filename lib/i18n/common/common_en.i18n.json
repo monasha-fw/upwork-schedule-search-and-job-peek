@@ -1,0 +1,13 @@
+{
+  "app": {
+    "title": "Schedule search and Job peek"
+  },
+  "loading": "Loading",
+  "success": "Success",
+  "routes": {
+    "home": "Home"
+  },
+  "actions": {
+    "cancel": "Cancel"
+  }
+}

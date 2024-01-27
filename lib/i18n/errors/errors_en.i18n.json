@@ -1,0 +1,36 @@
+{
+  "common": {
+    "text": "Error",
+    "actions": {
+      "text": "Action failed",
+      "failed": "$action failed",
+      "failed_extra": "$action failed, $extra"
+    },
+    "fields": {
+      "input": "Please Enter a valid $field",
+      "select": "Please Select a valid $field",
+      "minChar": "Your $field should contain at-least $min characters.",
+      "maxChar": "Your $field should not exceed $max characters.",
+      "password": "Your $field must contain at-least, $min characters, one uppercase letter, one numeric value.",
+      "confirm": "Your $field doesn't match with $confirmField.",
+      "required": "$field field is required."
+    },
+    "failures": {
+      "somethingWentWrong": "Something Went Wrong.",
+      "noAuthCache": "No previous logged in sessions found.",
+      "noInternet": "No working internet connections found.",
+      "unauthorized": "Unauthorized.",
+      "networkFailure": "Network Failure",
+      "cacheClearFailure": "Failed to clear the caches",
+      "cacheSetFailure": "Failed to cache data",
+      "cacheGetFailure": "Failed to retrieve cache",
+      "accessTokenFailure": "Invalid user session",
+      "otherFailure": "Something went wrong",
+      "formatException": "Unable to process the data",
+      "unableToProcess": "Unable to process",
+      "unexpectedError": "Unexpected error",
+      "unknownError": "Try again. Unknown error happened. We are working on this.",
+      "websocketConnectionRefused": "Failed to connect to the server!"
+    }
+  }
+}

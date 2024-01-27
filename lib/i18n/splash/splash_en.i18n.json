@@ -1,0 +1,10 @@
+{
+  "forceUpdate": {
+    "title": "Unsupported app version",
+    "desc": "You're using an unsupported version of the app, please update to the latest version.",
+    "action": "Update"
+  },
+  "failures": {
+    "unsupportedVersion": "Installed app version $curVersion is not supported anymore. Please update your app."
+  }
+}

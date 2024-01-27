@@ -28,23 +28,29 @@ final _inputDecorationTheme = InputDecorationTheme(
   filled: true,
   isDense: true,
   contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-  labelStyle: const TextStyle(color: kOnSurface, fontSize: 14),
-  hintStyle: const TextStyle(color: kOnSurface, fontSize: 12),
+  labelStyle: const TextStyle(
+    // color: kOnSurface,
+    fontSize: 14,
+  ),
+  hintStyle: const TextStyle(
+    // color: kOnSurface,
+    fontSize: 12,
+  ),
   // hintStyle: const TextStyle(color: kTextHint),
   border: OutlineInputBorder(
-    borderSide: const BorderSide(color: kOutline),
+    // borderSide: const BorderSide(color: kOutline),
     borderRadius: BorderRadius.circular(4),
   ),
   enabledBorder: OutlineInputBorder(
-    borderSide: const BorderSide(color: kOutline),
+    // borderSide: const BorderSide(color: kOutline),
     borderRadius: BorderRadius.circular(4),
   ),
   disabledBorder: OutlineInputBorder(
-    borderSide: const BorderSide(color: kDisabled),
+    // borderSide: const BorderSide(color: kDisabled),
     borderRadius: BorderRadius.circular(4),
   ),
   focusedBorder: OutlineInputBorder(
-    borderSide: const BorderSide(color: kOutlineFocused),
+    // borderSide: const BorderSide(color: kOutlineFocused),
     borderRadius: BorderRadius.circular(4),
   ),
   errorBorder: OutlineInputBorder(
@@ -64,41 +70,35 @@ final _lightThemeData = ThemeData.light().copyWith(
     /* primary */
     primary: kPrimary,
     onPrimary: kOnPrimary,
-    primaryContainer: kPrimaryContainer,
-    onPrimaryContainer: kOnPrimaryContainer,
+    /* secondary */
+    secondary: kSecondary,
+    onSecondary: kOnSecondary,
+    /* accents */
+    primaryContainer: kPrimaryContainer, // accent 1
+    secondaryContainer: kSecondaryContainer, // accent 2
 
-    // /* secondary */
-    // secondary: kSecondary,
-    // onSecondary: kOnSecondary,
-    // secondaryContainer: kSecondaryContainer,
-
-    // /* tertiary */
+    /* tertiary */
     // tertiary: kTertiary,
-    // onTertiary: kOnTertiary,
-    // tertiaryContainer: kTertiaryContainer,
-    // onTertiaryContainer: kOnTertiaryContainer,
 
     /* background colors */
-    // background: kBackground,
-    // // on hover
-    surface: kSurface,
-    onSurface: kOnSurface,
-    surfaceVariant: kSurfaceContainer,
+    background: kBackground,
+    onBackground: kOnBackground,
 
     /* outline (border) */
-    outline: kOutline,
-    outlineVariant: kOutlineVariant,
+    // outline: kOutline,
+    // outlineVariant: kOutlineVariant,
 
     /* statuses */
     error: kError,
+    inversePrimary: kSuccess,
   ),
   /* Widget colors */
   dialogTheme: const DialogTheme(
-    backgroundColor: kSurface,
+    backgroundColor: kBackground,
   ),
-  dividerTheme: const DividerThemeData(color: kOutline),
+  // dividerTheme: const DividerThemeData(color: kOutline),
   drawerTheme: const DrawerThemeData(
-    backgroundColor: kSurfaceContainer,
+    backgroundColor: kBackground,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.zero),
     ),
@@ -121,7 +121,7 @@ final _lightThemeData = ThemeData.light().copyWith(
     style: OutlinedButton.styleFrom(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
       textStyle: const TextStyle(
-        color: kOnPrimaryContainer,
+        // color: kOnPrimaryContainer,
         fontWeight: FontWeight.bold,
         fontSize: 18,
       ),
@@ -129,7 +129,11 @@ final _lightThemeData = ThemeData.light().copyWith(
     ),
   ),
   dropdownMenuTheme: DropdownMenuThemeData(
-    textStyle: const TextStyle(color: kOnSurface, fontSize: 15, fontWeight: FontWeight.w600),
+    textStyle: const TextStyle(
+      // color: kOnSurface,
+      fontSize: 15,
+      fontWeight: FontWeight.w600,
+    ),
     inputDecorationTheme: _inputDecorationTheme,
   ),
 );

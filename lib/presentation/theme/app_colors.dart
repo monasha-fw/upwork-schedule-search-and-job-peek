@@ -19,8 +19,8 @@ const kSecondary = Color.fromRGBO(190, 199, 220, 1);
 const kOnSecondary = Color.fromRGBO(40, 49, 65, 1);
 
 /* accent */
-const kPrimaryContainer = Color.fromRGBO(58, 231, 188, 1);
-const kSecondaryContainer = Color.fromRGBO(244, 96, 54, 1);
+const accent1 = Color.fromRGBO(58, 231, 188, 1);
+const accent2 = Color.fromRGBO(244, 96, 54, 1);
 
 /* background */
 const kBackground = Color.fromRGBO(242, 245, 248, 1);

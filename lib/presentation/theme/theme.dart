@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:schedule_search_and_job_peek/presentation/extensions/index.dart';
 
 part 'app_colors.dart';
 part 'theme_sizes.dart';
@@ -20,6 +21,48 @@ ThemeData get lightTheme {
 ThemeData get darkTheme {
   return _darkThemeData;
 }
+
+/// text themes
+final _h1 = TextStyle(
+  fontSize: 36.sp,
+  height: 1.25,
+  fontWeight: FontWeight.w600,
+);
+final _h2 = TextStyle(
+  fontSize: 30.sp,
+  height: 1.25,
+  fontWeight: FontWeight.w600,
+);
+final _h3 = TextStyle(
+  fontSize: 22.sp,
+  height: 1.25,
+  fontWeight: FontWeight.w600,
+);
+final _h4 = TextStyle(
+  fontSize: 18.sp,
+  height: 1.25,
+  fontWeight: FontWeight.w600,
+);
+final _p1r = TextStyle(
+  fontSize: 16.sp,
+  height: 1.5,
+  fontWeight: FontWeight.w600,
+);
+final _p1b = TextStyle(
+  fontSize: 16.sp,
+  height: 1.5,
+  fontWeight: FontWeight.normal,
+);
+final _l1 = TextStyle(
+  fontSize: 16.sp,
+  height: 1.25,
+  fontWeight: FontWeight.normal,
+);
+final _l2 = TextStyle(
+  fontSize: 12.sp,
+  height: 1.25,
+  fontWeight: FontWeight.normal,
+);
 
 /// Input decoration theme for,
 /// TextField, TextFormField, DropDownMenu
@@ -74,8 +117,8 @@ final _lightThemeData = ThemeData.light().copyWith(
     secondary: kSecondary,
     onSecondary: kOnSecondary,
     /* accents */
-    primaryContainer: kPrimaryContainer, // accent 1
-    secondaryContainer: kSecondaryContainer, // accent 2
+    primaryContainer: accent1,
+    secondaryContainer: accent2,
 
     /* tertiary */
     // tertiary: kTertiary,
@@ -92,24 +135,35 @@ final _lightThemeData = ThemeData.light().copyWith(
     error: kError,
     inversePrimary: kSuccess,
   ),
+  textTheme: TextTheme(
+    headlineLarge: _h1,
+    headlineMedium: _h2,
+    headlineSmall: _h3,
+    titleLarge: _h4,
+    bodyLarge: _p1r,
+    bodyMedium: _p1b,
+    labelLarge: _l1,
+    labelSmall: _l2,
+  ),
   /* Widget colors */
+  appBarTheme: AppBarTheme(
+    backgroundColor: kPrimary,
+    titleTextStyle: _h1.copyWith(
+      color: kOnPrimary,
+    ),
+  ),
   dialogTheme: const DialogTheme(
     backgroundColor: kBackground,
   ),
   // dividerTheme: const DividerThemeData(color: kOutline),
-  drawerTheme: const DrawerThemeData(
-    backgroundColor: kBackground,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.zero),
+  dropdownMenuTheme: DropdownMenuThemeData(
+    textStyle: const TextStyle(
+      // color: kOnSurface,
+      fontSize: 15,
+      fontWeight: FontWeight.w600,
     ),
+    inputDecorationTheme: _inputDecorationTheme,
   ),
-  listTileTheme: ListTileThemeData(
-    selectedTileColor: kPrimaryContainer,
-    dense: true,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-    // TODO
-  ),
-  inputDecorationTheme: _inputDecorationTheme,
   filledButtonTheme: FilledButtonThemeData(
     style: FilledButton.styleFrom(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
@@ -117,6 +171,19 @@ final _lightThemeData = ThemeData.light().copyWith(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
     ),
   ),
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    backgroundColor: kPrimary,
+    foregroundColor: accent1,
+  ),
+  iconTheme: const IconThemeData(color: accent1),
+  inputDecorationTheme: _inputDecorationTheme,
+  listTileTheme: ListTileThemeData(
+    selectedTileColor: accent1,
+    dense: true,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+    // TODO
+  ),
+  navigationBarTheme: const NavigationBarThemeData(indicatorColor: accent1),
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
@@ -127,14 +194,6 @@ final _lightThemeData = ThemeData.light().copyWith(
       ),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
     ),
-  ),
-  dropdownMenuTheme: DropdownMenuThemeData(
-    textStyle: const TextStyle(
-      // color: kOnSurface,
-      fontSize: 15,
-      fontWeight: FontWeight.w600,
-    ),
-    inputDecorationTheme: _inputDecorationTheme,
   ),
 );
 

@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:schedule_search_and_job_peek/i18n/translations.g.dart';
 import 'package:schedule_search_and_job_peek/presentation/routing/router.gr.dart';
 
 part 'router_paths.dart';
@@ -19,6 +20,22 @@ class AppRouter extends $AppRouter {
       durationInMilliseconds: _duration,
       keepHistory: false,
       path: '/',
+    ),
+    CustomRoute(
+      page: HomeRoute.page,
+      transitionsBuilder: TransitionsBuilders.fadeIn,
+      durationInMilliseconds: _duration,
+      path: homeRoute,
+      title: (context, data) => t.common.app.title,
+      children: [
+        CustomRoute(
+          page: ScheduleRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideRightWithFade,
+          durationInMilliseconds: _duration,
+          path: patientsRoute,
+          title: (context, data) => t.common.routes.schedule,
+        ),
+      ],
     ),
   ];
 }

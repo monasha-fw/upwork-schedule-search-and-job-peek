@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:schedule_search_and_job_peek/presentation/routing/router.gr.dart';
 
 @RoutePage()
 class SplashPage extends StatefulWidget {
@@ -14,8 +15,8 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
 
-    /// Navigate to Home
-    // context.router.replaceAll([const HomeRoute()]);
+    // Navigate to [HomePage]
+    context.router.replaceAll([const HomeRoute()]);
   }
 
   @override

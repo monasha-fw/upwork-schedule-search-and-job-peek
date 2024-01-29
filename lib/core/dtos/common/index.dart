@@ -1,1 +1,1 @@
-export 'get_pagination.dart';
+export 'get_params_dto.dart';

@@ -9,4 +9,8 @@ part 'schedule_state.dart';
 @injectable
 class ScheduleCubit extends Cubit<ScheduleState> {
   ScheduleCubit() : super(ScheduleState.initial());
+
+  void selectDate(DateTime date) => emit(state.copyWith(selectedDate: date));
+
+  void setJobsForDate(List<Job> jobs) => emit(state.copyWith(jobs: jobs));
 }

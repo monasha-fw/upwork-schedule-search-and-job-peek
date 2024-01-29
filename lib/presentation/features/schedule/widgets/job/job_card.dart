@@ -3,11 +3,20 @@ import 'package:intl/intl.dart';
 import 'package:schedule_search_and_job_peek/core/entities/index.dart';
 import 'package:schedule_search_and_job_peek/presentation/common/widgets/index.dart';
 import 'package:schedule_search_and_job_peek/presentation/extensions/index.dart';
+import 'package:schedule_search_and_job_peek/presentation/features/job/widgets/index.dart';
 
 class JobCard extends StatelessWidget {
   const JobCard(this.job, {super.key});
 
   final Job job;
+
+  void _openJobPeek(BuildContext context) {
+    // open JobPeek bottom sheet
+    showModalBottomSheet<void>(
+      context: context,
+      builder: (context) => JobPeekBottomSheet(job),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,9 +67,7 @@ class JobCard extends StatelessWidget {
                 ],
               ),
               IconButton(
-                onPressed: () {
-                  //   TODO
-                },
+                onPressed: () => _openJobPeek(context),
                 icon: Icon(
                   Icons.remove_red_eye,
                   color: context.colorScheme.secondaryContainer,

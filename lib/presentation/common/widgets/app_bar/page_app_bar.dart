@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:schedule_search_and_job_peek/presentation/common/widgets/index.dart';
 import 'package:schedule_search_and_job_peek/presentation/extensions/index.dart';
@@ -7,7 +8,6 @@ class PageAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.title,
     this.subTitle,
     this.actions = const [],
-    this.automaticallyImplyLeading = true,
     super.key,
   });
 
@@ -15,12 +15,15 @@ class PageAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? subTitle;
   final List<Widget> actions;
 
-  final bool automaticallyImplyLeading;
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      automaticallyImplyLeading: automaticallyImplyLeading,
+      leading: context.router.canNavigateBack
+          ? IconButton(
+              onPressed: () => context.popRoute(),
+              icon: const Icon(Icons.chevron_left),
+            )
+          : null,
       centerTitle: true,
       title: Column(
         mainAxisAlignment: MainAxisAlignment.center,

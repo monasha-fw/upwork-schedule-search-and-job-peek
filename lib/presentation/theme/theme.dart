@@ -159,6 +159,8 @@ final _lightThemeData = ThemeData.light().copyWith(
     titleTextStyle: _h1.copyWith(
       color: kOnPrimary,
     ),
+    iconTheme: IconThemeData(color: accent1, size: 50.sp),
+    actionsIconTheme: const IconThemeData(color: accent1),
   ),
   dialogTheme: const DialogTheme(
     backgroundColor: kBackground,

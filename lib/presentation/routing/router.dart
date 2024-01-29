@@ -37,6 +37,11 @@ class AppRouter extends $AppRouter {
         ),
       ],
     ),
+    CustomRoute(
+      page: JobHomeRoute.page,
+      transitionsBuilder: TransitionsBuilders.fadeIn,
+      durationInMilliseconds: _duration,
+    ),
   ];
 }
 

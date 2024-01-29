@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:schedule_search_and_job_peek/i18n/translations.g.dart';
+import 'package:schedule_search_and_job_peek/infrastructure/datasources/index.dart';
 import 'package:schedule_search_and_job_peek/infrastructure/network/index.dart';
 
 @Singleton(as: IHttpClient)
@@ -13,9 +14,9 @@ class DioHttpClientImpl implements IHttpClient {
   final DioAdapter dioAdapter;
 
   DioHttpClientImpl(this._client, this.networkInfo, this.dioAdapter) {
-    /// [NOTE] - Mocks only for testing without a server
-    // _client.httpClientAdapter = dioAdapter;
-    // mockInit(dioAdapter);
+    /// [NOTE] - TODO: Mocks only for testing without a server
+    _client.httpClientAdapter = dioAdapter;
+    mockData(dioAdapter);
   }
 
   /// internet connectivity check

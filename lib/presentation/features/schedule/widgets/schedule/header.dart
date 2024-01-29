@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:schedule_search_and_job_peek/presentation/extensions/index.dart';
+import 'package:schedule_search_and_job_peek/presentation/features/schedule/bloc/index.dart';
 import 'package:schedule_search_and_job_peek/presentation/features/schedule/widgets/index.dart';
 
 class ScheduleHeader extends StatefulWidget {
@@ -24,6 +26,8 @@ class _ScheduleHeaderState extends State<ScheduleHeader> {
   }
 
   void _getTheVisibleDays(DateTime date) {
+    context.read<ScheduleActionsCubit>().getData(date: date);
+
     final dates = <DateTime>[];
     final monday = selectedDate.subtract(Duration(days: selectedDate.weekday - 1));
     for (var i = 0; i < 7; i++) {

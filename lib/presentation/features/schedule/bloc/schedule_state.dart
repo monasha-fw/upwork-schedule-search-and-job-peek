@@ -9,19 +9,6 @@ class ScheduleState with _$ScheduleState {
 
   factory ScheduleState.initial() => ScheduleState(
         selectedDate: DateTime.now(),
-        jobs: [
-          Job(
-            id: '3',
-            startTime: DateTime.now(),
-            endTime: DateTime.now().add(const Duration(hours: 3)),
-            service: 'Test Service',
-            location: const JobLocation(
-              name: 'Test Location',
-              address: 'Test Address',
-              postalCode: '123456',
-            ),
-            description: 'Test Description',
-          ),
-        ],
+        jobs: [],
       );
 }

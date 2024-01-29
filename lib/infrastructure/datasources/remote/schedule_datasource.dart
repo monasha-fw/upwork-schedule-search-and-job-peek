@@ -5,6 +5,7 @@ import 'package:schedule_search_and_job_peek/core/entities/index.dart';
 import 'package:schedule_search_and_job_peek/core/errors/index.dart';
 import 'package:schedule_search_and_job_peek/infrastructure/constants/index.dart';
 import 'package:schedule_search_and_job_peek/infrastructure/errors/index.dart';
+import 'package:schedule_search_and_job_peek/infrastructure/extensions/index.dart';
 import 'package:schedule_search_and_job_peek/infrastructure/models/index.dart';
 import 'package:schedule_search_and_job_peek/infrastructure/network/index.dart';
 
@@ -24,7 +25,7 @@ class ScheduleRemoteDataSourceImpl implements ScheduleRemoteDataSource {
   Future<Either<Failure, List<Job>>> getJobsForDate(GetJobsForDateDto dto) async {
     try {
       // TODO: final params = GetJobsForDateModelDto.fromDomain(dto).toJson();
-      final params = {'date': dto.date};
+      final params = {'date': dto.date.startOfDay.toString()};
 
       final res = await _client.get(getJobsForDateUrl, queryParameters: params);
 

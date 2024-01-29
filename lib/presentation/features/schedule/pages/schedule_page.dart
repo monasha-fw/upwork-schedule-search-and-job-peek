@@ -25,6 +25,9 @@ class SchedulePage extends StatelessWidget {
             // set Jobs on success
             if (state is ScheduleActionsSuccess) {
               context.read<ScheduleCubit>().setJobsForDate(state.jobs);
+            } else if (state is ScheduleActionsFailure) {
+              // clear data on failure
+              context.read<ScheduleCubit>().setJobsForDate([]);
             }
           },
           child: const ScheduleContainer(),

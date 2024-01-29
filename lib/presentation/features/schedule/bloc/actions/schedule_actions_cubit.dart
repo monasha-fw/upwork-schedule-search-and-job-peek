@@ -16,6 +16,8 @@ class ScheduleActionsCubit extends Cubit<ScheduleActionsState> {
   ScheduleActionsCubit(this._getJobsForDate) : super(const ScheduleActionsState.initial());
 
   Future<void> getData({DateTime? date}) async {
+    emit(const ScheduleActionsProcessing());
+
     final dto = GetJobsForDateDto(date: date ?? DateTime.now());
     final either = await _getJobsForDate(dto);
     if (either.isLeft()) {

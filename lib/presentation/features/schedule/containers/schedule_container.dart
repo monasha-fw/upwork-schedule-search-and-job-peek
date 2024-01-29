@@ -14,6 +14,16 @@ class ScheduleContainer extends StatelessWidget {
         const SliverPinnedHeader(child: ScheduleHeader()),
         BlocBuilder<ScheduleCubit, ScheduleState>(
           builder: (context, state) {
+            // when list is empty
+            if (state.jobs.isEmpty) {
+              return const SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 24),
+                  child: ScheduleEmpty(),
+                ),
+              );
+            }
+
             return SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, index) => JobCard(state.jobs[index]),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:schedule_search_and_job_peek/presentation/extensions/index.dart';
 import 'package:schedule_search_and_job_peek/presentation/features/schedule/widgets/index.dart';
 
@@ -45,7 +46,7 @@ class _ScheduleHeaderState extends State<ScheduleHeader> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'November 2023',
+                DateFormat('MMMM y').format(selectedDate),
                 style: context.textTheme.titleMedium?.copyWith(
                   color: context.colorScheme.secondary,
                 ),
@@ -69,13 +70,17 @@ class _ScheduleHeaderState extends State<ScheduleHeader> {
                   ),
                   IconButton(
                     onPressed: () {
-                      // TODO
+                      final date = selectedDate.subtract(const Duration(days: 1));
+                      setState(() => selectedDate = date);
+                      _getTheVisibleDays(date);
                     },
                     icon: const Icon(Icons.chevron_left),
                   ),
                   IconButton(
                     onPressed: () {
-                      // TODO
+                      final date = selectedDate.add(const Duration(days: 1));
+                      setState(() => selectedDate = date);
+                      _getTheVisibleDays(date);
                     },
                     icon: const Icon(Icons.chevron_right),
                   )
@@ -85,7 +90,14 @@ class _ScheduleHeaderState extends State<ScheduleHeader> {
           ),
 
           // Calender view for the selected week
-          WeekView(selectedDate: selectedDate, days: visibleDays),
+          WeekView(
+            selectedDate: selectedDate,
+            days: visibleDays,
+            onSelected: (d) {
+              setState(() => selectedDate = d);
+              _getTheVisibleDays(d);
+            },
+          ),
         ],
       ),
     );

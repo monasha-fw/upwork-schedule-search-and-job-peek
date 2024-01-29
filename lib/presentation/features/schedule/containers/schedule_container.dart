@@ -16,19 +16,7 @@ class ScheduleContainer extends StatelessWidget {
           builder: (context, state) {
             return SliverList(
               delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  final job = state.jobs[index];
-                  return Container(
-                    padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 12),
-                    child: Card(
-                      color: Colors.red,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Text('Item: ${job.id}'),
-                      ),
-                    ),
-                  );
-                },
+                (context, index) => JobCard(state.jobs[index]),
                 childCount: state.jobs.length,
               ),
             );

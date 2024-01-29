@@ -27,41 +27,49 @@ final _h1 = TextStyle(
   fontSize: 36.sp,
   height: 1.25,
   fontWeight: FontWeight.w600,
+  color: Colors.black,
 );
 final _h2 = TextStyle(
   fontSize: 30.sp,
   height: 1.25,
   fontWeight: FontWeight.w600,
+  color: Colors.black,
 );
 final _h3 = TextStyle(
   fontSize: 22.sp,
   height: 1.25,
   fontWeight: FontWeight.w600,
+  color: Colors.black,
 );
 final _h4 = TextStyle(
   fontSize: 18.sp,
   height: 1.25,
   fontWeight: FontWeight.w600,
+  color: Colors.black,
 );
 final _p1r = TextStyle(
   fontSize: 16.sp,
   height: 1.5,
   fontWeight: FontWeight.w600,
+  color: Colors.black,
 );
 final _p1b = TextStyle(
   fontSize: 16.sp,
   height: 1.5,
   fontWeight: FontWeight.normal,
+  color: Colors.black,
 );
 final _l1 = TextStyle(
   fontSize: 16.sp,
   height: 1.25,
   fontWeight: FontWeight.normal,
+  color: Colors.black,
 );
 final _l2 = TextStyle(
   fontSize: 12.sp,
   height: 1.25,
   fontWeight: FontWeight.normal,
+  color: Colors.black,
 );
 
 /// Input decoration theme for,
